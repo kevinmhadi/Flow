@@ -1392,7 +1392,7 @@ setMethod('refresh', 'Job', function(object, verbose = TRUE)
 #' @exportMethod [
 #' @export
 #' @author Marcin Imielinski
-setMethod('[', 'Job', function(x, i, id = FALSE)
+setMethod('[', 'Job', function(x, i, id = FALSE, drop = FALSE)
 {
   if (is.character(id))
   {
@@ -1455,7 +1455,7 @@ setMethod('[', 'Job', function(x, i, id = FALSE)
 #' @exportMethod [<-
 #' @export
 #' @author Marcin Imielinski
-setMethod('[<-', 'Job', function(x, i, value, id = FALSE) {
+setMethod('[<-', 'Job', function(x, i, id = FALSE, value) {
         if (!is(value, 'Job'))
             stop('Must replace with Job object')
 
